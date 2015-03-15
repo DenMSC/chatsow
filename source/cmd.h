@@ -21,7 +21,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifndef WRLC_CMD_H
 #define WRLC_CMD_H
 
-#define MAX_CMDS 2048
+#define MAX_CMDS 2048*4 // :D
 #define MAX_ARGC 512
 #define MAX_ARG_SIZE 2048
 #define MAX_ARGS_SIZE (MAX_ARGC * MAX_ARG_SIZE)

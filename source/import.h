@@ -23,8 +23,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #include <string.h>
 
-#define MAX_MSGLEN 32768
-#define MAX_MSG_STRING_CHARS 2048
+#define MAX_MSGLEN 32768*2
+#define MAX_MSG_STRING_CHARS 1024 // !!!>o_/
 
 #define MAX_EDICTS 1024
 
@@ -90,13 +90,14 @@ enum
 
 #define	MAX_QPATH					64			// max length of a quake game pathname
 
-#define   MAX_STRING_CHARS                        1024
+#define   MAX_STRING_CHARS                        1024 // lewat?! \_?<
 
-#define MAX_GAMECOMMANDS	64		// command names for command completion
-#define MAX_LOCATIONS		64
+#define MAX_GAMECOMMANDS	256		// command names for command completion
+#define MAX_LOCATIONS		256
 #define MAX_WEAPONDEFS		MAX_ITEMS
+#define MAX_HELPMESSAGES	256
 
-#define   MAX_CONFIGSTRINGS       ( CS_GENERAL+MAX_GENERAL )
+#define   MAX_CONFIGSTRINGS       ( CS_HELPMESSAGES + MAX_HELPMESSAGES )
 #define MAX_CONFIGSTRING_CHARS            MAX_QPATH       // max length of a configstring string
 
 #define   PS_MAX_STATS                    64
@@ -265,14 +266,15 @@ enum
 #define CS_LOCATIONS		( CS_GAMECOMMANDS+MAX_GAMECOMMANDS )
 #define CS_WEAPONDEFS		( CS_LOCATIONS+MAX_LOCATIONS )
 #define CS_GENERAL			( CS_WEAPONDEFS+MAX_WEAPONDEFS )
+#define CS_HELPMESSAGES		( CS_GENERAL+MAX_GENERAL )
 
-#define	MAX_CONFIGSTRINGS	( CS_GENERAL+MAX_GENERAL )
+#define	MAX_CONFIGSTRINGS	( CS_HELPMESSAGES+MAX_HELPMESSAGES )
 
 #define	MAX_CLIENTS					256			// absolute limit
 #define	MAX_EDICTS					1024		// must change protocol to increase more
 #define	MAX_LIGHTSTYLES				256
-#define	MAX_MODELS					256			// these are sent over the net as bytes
-#define	MAX_SOUNDS					256			// so they cannot be blindly increased
+#define	MAX_MODELS					1024			// these are sent over the net as bytes
+#define	MAX_SOUNDS					1024			// so they cannot be blindly increased
 #define	MAX_IMAGES					256
 #define MAX_SKINFILES				256
 #define MAX_ITEMS					64			// 16x4
